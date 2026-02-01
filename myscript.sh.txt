@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#1.Creating file to store my plan for the day
+dayfile="today.txt"
+
+#2.Starting with the welcome message showing the name and current date
+echo "Good Morning! Haji. Today is $(date +"%B, %d %Y")." >> "$dayfile"
+echo "Here is the list of things you should do:" >> "$dayfile"
+echo "" >> "$dayfile"
+
+#3.Creating a For loop to list out activities
+for plans in "eat breakfast" "homework" "Practice Linux" "lunch with friends" "nap"
+do
+  echo "- $plans" >> "$dayfile"
+done
+echo "" >> "$dayfile"
+
+#4.Showing how long the Operating System is running
+echo "Your Operating System was $(uptime -p)." >> "$dayfile"
+
+#5.showing current  directory 
+echo "You're currently in this directory: $(pwd)" >> "$dayfile"
+
+#Read the content
+cat today.txt
